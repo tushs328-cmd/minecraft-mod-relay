@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: mod-relay
+    runtime: python
+    plan: free
+    buildCommand: python --version
+    startCommand: python server.py
+    healthCheckPath: /health
+    envVars:
+      - key: RELAY_HOST
+        value: 0.0.0.0
